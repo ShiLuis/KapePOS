@@ -1,0 +1,201 @@
+.pos-system {
+  display: flex;
+  flex-direction: column; /* Stack main-controls and main-content-area vertically */
+  gap: 20px;
+  padding: 20px;
+  min-height: calc(100vh - 40px); /* Ensure it takes up viewport height minus padding */
+}
+
+.product-list {
+  flex-grow: 1; /* Allow product list to take available horizontal space */
+}
+
+.category-section {
+  margin-bottom: 30px;
+}
+
+.category-section h2 {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.product-card h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+.product-card p {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #333;
+}
+
+.cart-section {
+  width: 350px; /* Or your preferred fixed width, or use flex-basis */
+  min-width: 300px; /* Ensure it doesn't get too small */
+  border-left: 1px solid #eee;
+  padding: 20px;
+  background-color: #fdfdfd;
+  display: flex; /* Added to make cart content (like summary and button) behave better */
+  flex-direction: column; /* Stack cart items, summary, and button vertically */
+
+  /* Make the cart sticky and scrollable */
+  position: sticky;
+  top: 20px; /* Adjust this value based on your header/top padding */
+  align-self: flex-start; /* Important for sticky positioning within a flex container */
+  max-height: calc(85vh - 40px); /* Adjust overall cart max height, e.g., 90vh */
+}
+
+.cart-section h2 {
+  margin-top: 0;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  flex-shrink: 0; /* Prevent h2 from shrinking */
+}
+
+.cart-section ul { /* This is the list of cart items */
+  list-style-type: none;
+  padding: 0;
+  margin: 0; /* Remove default margins */
+  flex-grow: 1; /* Allow the list to take available space */
+  overflow-y: auto; /* Make ONLY the list scrollable */
+  min-height: 50px; /* Optional: ensure it has some minimum height */
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.item-info span:first-child {
+  font-weight: bold;
+}
+
+.item-price-quantity { /* New style */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.item-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.item-actions button {
+  padding: 5px 8px;
+  font-size: 0.9em;
+}
+
+.item-actions .remove-btn {
+  background-color: #ffdddd;
+  color: #d8000c;
+  border: 1px solid #d8000c;
+}
+
+.item-actions .remove-btn:hover {
+  background-color: #ffcccc;
+}
+
+.cart-section h3 {
+  margin-top: 20px;
+  text-align: right;
+  font-size: 1.3em;
+}
+
+.cart-summary {
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  flex-shrink: 0; /* Prevent summary from shrinking */
+}
+
+.cart-summary p {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  font-size: 1em;
+}
+
+.cart-summary h3 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.proceed-to-payment-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1em;
+  background-color: #28a745; /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.proceed-to-payment-btn:hover {
+  background-color: #218838;
+}
+
+/* Styles for the main controls area and history button */
+.main-controls {
+  padding: 10px 20px; /* Adjust padding as needed */
+  text-align: right; /* Or 'left', or 'center' depending on where you want it */
+  border-bottom: 1px solid #eee; /* Optional: to separate from product list */
+}
+
+.history-btn {
+  padding: 10px 15px;
+  background-color: #17a2b8; /* Teal/Info color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.history-btn:hover {
+  background-color: #138496;
+}
+
+.main-content-area {
+  display: flex; /* Arrange product-list and cart-section side-by-side */
+  gap: 20px;
+  flex-grow: 1; /* Allow this area to take up available vertical space */
+}
+

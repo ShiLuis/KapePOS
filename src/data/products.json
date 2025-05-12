@@ -1,0 +1,260 @@
+[
+  {
+    "category": "Hot Coffees",
+    "items": [
+      {
+        "id": "hc001",
+        "name": "Espresso",
+        "price": 140,
+        "options": [
+          {
+            "name": "Size",
+            "values": [
+              { "name": "Single", "price_modifier": 0 },
+              { "name": "Double", "price_modifier": 28 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hc002",
+        "name": "Latte",
+        "price": 196,
+        "options": [
+          {
+            "name": "Size",
+            "values": [
+              { "name": "Small", "price_modifier": 0 },
+              { "name": "Medium", "price_modifier": 42 },
+              { "name": "Large", "price_modifier": 70 }
+            ]
+          },
+          {
+            "name": "Milk",
+            "values": [
+              { "name": "Whole Milk", "price_modifier": 0 },
+              { "name": "Oat Milk", "price_modifier": 28 },
+              { "name": "Almond Milk", "price_modifier": 28 },
+              { "name": "Soy Milk", "price_modifier": 28 }
+            ]
+          }
+        ],
+        "addons": [
+          { "name": "Extra Shot", "price": 42 },
+          { "name": "Vanilla Syrup", "price": 28 },
+          { "name": "Caramel Syrup", "price": 28 }
+        ]
+      },
+      {
+        "id": "hc003",
+        "name": "Cappuccino",
+        "price": 182,
+        "options": [
+          {
+            "name": "Size",
+            "values": [
+              { "name": "Small", "price_modifier": 0 },
+              { "name": "Medium", "price_modifier": 42 },
+              { "name": "Large", "price_modifier": 70 }
+            ]
+          },
+          {
+            "name": "Milk",
+            "values": [
+              { "name": "Whole Milk", "price_modifier": 0 },
+              { "name": "Oat Milk", "price_modifier": 28 },
+              { "name": "Almond Milk", "price_modifier": 28 }
+            ]
+          }
+        ],
+        "addons": [
+          { "name": "Chocolate Powder", "price": 14 }
+        ]
+      },
+      {
+        "id": "hc004",
+        "name": "Americano",
+        "price": 154,
+        "options": [
+          {
+            "name": "Size",
+            "values": [
+              { "name": "Small", "price_modifier": 0 },
+              { "name": "Medium", "price_modifier": 28 },
+              { "name": "Large", "price_modifier": 56 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Cold Coffees",
+    "items": [
+      {
+        "id": "cc001",
+        "name": "Iced Latte",
+        "price": 224,
+        "options": [
+          {
+            "name": "Size",
+            "values": [
+              { "name": "Medium", "price_modifier": 0 },
+              { "name": "Large", "price_modifier": 42 }
+            ]
+          },
+          {
+            "name": "Milk",
+            "values": [
+              { "name": "Whole Milk", "price_modifier": 0 },
+              { "name": "Oat Milk", "price_modifier": 28 },
+              { "name": "Almond Milk", "price_modifier": 28 }
+            ]
+          }
+        ],
+        "addons": [
+          { "name": "Extra Shot", "price": 42 },
+          { "name": "Vanilla Syrup", "price": 28 },
+          { "name": "Caramel Drizzle", "price": 34 }
+        ]
+      },
+      {
+        "id": "cc002",
+        "name": "Cold Brew",
+        "price": 210,
+        "options": [
+          {
+            "name": "Size",
+            "values": [
+              { "name": "Medium", "price_modifier": 0 },
+              { "name": "Large", "price_modifier": 42 }
+            ]
+          }
+        ],
+        "addons": [
+          { "name": "Sweet Cream", "price": 42 },
+          { "name": "Mocha Syrup", "price": 28 }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Teas",
+    "items": [
+      {
+        "id": "t001",
+        "name": "Green Tea",
+        "price": 140,
+        "options": [
+          {
+            "name": "Type",
+            "values": [
+              { "name": "Hot" },
+              { "name": "Iced" }
+            ]
+          },
+          {
+            "name": "Size",
+            "values": [
+              { "name": "Regular", "price_modifier": 0 },
+              { "name": "Large", "price_modifier": 28 }
+            ]
+          }
+        ],
+        "addons": [
+          { "name": "Honey", "price": 14 },
+          { "name": "Lemon", "price": 14 }
+        ]
+      },
+      {
+        "id": "t002",
+        "name": "Chai Latte",
+        "price": 213,
+        "options": [
+          {
+            "name": "Type",
+            "values": [
+              { "name": "Hot" },
+              { "name": "Iced", "price_modifier": 11 }
+            ]
+          },
+          {
+            "name": "Size",
+            "values": [
+              { "name": "Small", "price_modifier": 0 },
+              { "name": "Medium", "price_modifier": 34 },
+              { "name": "Large", "price_modifier": 62 }
+            ]
+          },
+          {
+            "name": "Milk",
+            "values": [
+              { "name": "Whole Milk", "price_modifier": 0 },
+              { "name": "Oat Milk", "price_modifier": 28 },
+              { "name": "Almond Milk", "price_modifier": 28 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Pastries",
+    "items": [
+      {
+        "id": "p001",
+        "name": "Croissant",
+        "price": 112
+      },
+      {
+        "id": "p002",
+        "name": "Muffin",
+        "price": 126,
+        "options": [
+          {
+            "name": "Flavor",
+            "values": [
+              { "name": "Blueberry" },
+              { "name": "Chocolate Chip" },
+              { "name": "Banana Nut" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "p003",
+        "name": "Scone",
+        "price": 154,
+        "options": [
+          {
+            "name": "Type",
+            "values": [
+              { "name": "Blueberry" },
+              { "name": "Cranberry Orange" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "p004",
+        "name": "Cookie",
+        "price": 84,
+        "options": [
+          {
+            "name": "Flavor",
+            "values": [
+              { "name": "Chocolate Chip" },
+              { "name": "Oatmeal Raisin" },
+              { "name": "Sugar Cookie" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "p005",
+        "name": "Ensaymada",
+        "price": 168
+      }
+    ]
+  }
+]

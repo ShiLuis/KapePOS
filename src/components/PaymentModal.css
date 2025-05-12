@@ -1,0 +1,29 @@
+/* .modal-overlay and .modal-content can be reused from ProductOptionsModal.css if desired,
+   or defined here for specific adjustments */
+
+.payment-modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.payment-options {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.payment-options button {
+  padding: 10px 20px;
+  font-size: 1.1em;
+  min-width: 150px;
+}
+
+.cancel-payment-btn {
+  display: block;
+  margin: 20px auto 0;
+  background-color: #dc3545; /* Red */
+  color: white;
+  padding: 10px 20px;
+}

@@ -1,0 +1,66 @@
+/* .modal-overlay and .modal-content can be reused or adapted */
+
+.receipt-modal-content {
+  /* Specific styles for receipt modal if needed, otherwise .modal-content from another CSS might suffice */
+  max-width: 450px; /* Slightly narrower for typical receipt look */
+}
+
+.receipt-modal-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.receipt-modal-content p {
+  margin: 5px 0;
+}
+
+.receipt-modal-content h4 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.receipt-items-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.receipt-items-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 0.9em;
+}
+
+.receipt-summary {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed #ccc;
+}
+
+.receipt-summary p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.receipt-summary p strong {
+  font-size: 1.1em;
+}
+
+.close-receipt-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #007bff; /* Blue */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.close-receipt-btn:hover {
+  background-color: #0056b3;
+}
