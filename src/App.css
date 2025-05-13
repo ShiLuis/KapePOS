@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+.app-layout {
+  display: flex;
+}
+
+.main-content {
+  margin-left: 250px; /* Matches the sidebar width */
+  padding: 20px;
+  width: 100%;
+}

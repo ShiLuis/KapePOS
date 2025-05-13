@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import '../pages/POS.css';
 
-const TAX_RATE = 0.08; 
+const TAX_RATE = 0.08;
 
-function Cart({ cartItems, onRemoveItem, onUpdateQuantity, onProceedToPayment }) { // Add onProceedToPayment prop
+function Cart({ cartItems, onRemoveItem, onUpdateQuantity, onProceedToPayment }) {
+  const [totalDiscount, setTotalDiscount] = useState({ type: 'fixed', value: 0 });
+
   if (!cartItems || cartItems.length === 0) {
     return (
       <div className="cart-section">
@@ -16,7 +19,7 @@ function Cart({ cartItems, onRemoveItem, onUpdateQuantity, onProceedToPayment })
     let optionsString = "";
     if (item.selectedOptions) {
       optionsString = Object.entries(item.selectedOptions)
-        .map(([key, value]) => `${value}`) // Just show selected value, key (like "Size") is implicit
+        .map(([key, value]) => `${value}`)
         .join(', ');
     }
     if (item.selectedAddons && item.selectedAddons.length > 0) {
@@ -26,56 +29,97 @@ function Cart({ cartItems, onRemoveItem, onUpdateQuantity, onProceedToPayment })
   };
 
   const displayItemNotes = (item) => {
-    return item.itemNotes ? <div style={{ fontSize: '0.85em', color: '#555' }}><em>Note: {item.itemNotes}</em></div> : null;
+    return item.itemNotes ? (
+      <div className="item-notes">
+        <em>Note: {item.itemNotes}</em>
+      </div>
+    ) : null;
   };
 
   const calculateSubtotal = () => {
-    return cartItems.reduce((sum, item) => {
-      // item.price should now be the finalPrice including options/addons
-      return sum + item.price * item.quantity;
-    }, 0);
+    return cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  };
+
+  const calculateDiscount = (subtotal) => {
+    if (totalDiscount.type === 'fixed') {
+      return Math.min(totalDiscount.value, subtotal);
+    } else if (totalDiscount.type === 'percentage') {
+      return (totalDiscount.value / 100) * subtotal;
+    }
+    return 0;
   };
 
   const subtotal = calculateSubtotal();
-  const taxAmount = subtotal * TAX_RATE;
-  const total = subtotal + taxAmount;
+  const discount = calculateDiscount(subtotal);
+  const taxAmount = (subtotal - discount) * TAX_RATE;
+  const total = subtotal - discount + taxAmount;
+
+  const handleDiscountChange = (type, value) => {
+    setTotalDiscount({ type, value: parseFloat(value) || 0 });
+  };
 
   return (
     <div className="cart-section">
       <h2>Cart</h2>
-      <ul>
-        {cartItems.map(item => (
-          // Use item.cartItemId as key, as it's unique for product + options combo
-          <li key={item.cartItemId} className="cart-item"> 
+      <ul className="cart-items">
+        {cartItems.map((item) => (
+          <li key={item.cartItemId} className="cart-item">
             <div className="item-info">
-              <span>{item.name} {formatOptions(item)}</span>
-              {displayItemNotes(item)} {/* Display item notes here */}
+              <span className="item-name">
+                {item.name} {formatOptions(item)}
+              </span>
+              {displayItemNotes(item)}
             </div>
-            <div className="item-price-quantity"> {/* Wrapper for price and actions */}
-              <span>₱{(item.price * item.quantity).toFixed(2)}</span>
+            <div className="item-price-quantity">
+              <span className="item-price">₱{(item.price * item.quantity).toFixed(2)}</span>
               <div className="item-actions">
                 <button onClick={() => onUpdateQuantity(item.cartItemId, item.quantity - 1)}>-</button>
                 <span>{item.quantity}</span>
                 <button onClick={() => onUpdateQuantity(item.cartItemId, item.quantity + 1)}>+</button>
-                <button onClick={() => onRemoveItem(item.cartItemId)} className="remove-btn">Remove</button>
+                <button onClick={() => onRemoveItem(item.cartItemId)} className="remove-btn">
+                  Remove
+                </button>
               </div>
             </div>
           </li>
         ))}
       </ul>
       <div className="cart-summary">
-        <p>Subtotal: <span>₱{subtotal.toFixed(2)}</span></p>
-        <p>Tax ({(TAX_RATE * 100).toFixed(0)}%): <span>₱{taxAmount.toFixed(2)}</span></p>
-        <h3>Total: <span>₱{total.toFixed(2)}</span></h3>
+        <p className="summary-row">
+          Subtotal: <span>₱{subtotal.toFixed(2)}</span>
+        </p>
+        <div className="discount-section">
+          <label className="discount-label">Apply Discount:</label>
+          <div className="discount-input-group">
+            <input
+              type="number"
+              className="discount-input"
+              placeholder="Enter amount or %"
+              onChange={(e) => handleDiscountChange(totalDiscount.type, e.target.value)}
+            />
+            <select
+              className="discount-select"
+              value={totalDiscount.type}
+              onChange={(e) => handleDiscountChange(e.target.value, totalDiscount.value)}
+            >
+              <option value="fixed">₱</option>
+              <option value="percentage">%</option>
+            </select>
+          </div>
+        </div>
+        <p className="summary-row">
+          Discount: <span>-₱{discount.toFixed(2)}</span>
+        </p>
+        <p className="summary-row">
+          Tax ({(TAX_RATE * 100).toFixed(0)}%): <span>₱{taxAmount.toFixed(2)}</span>
+        </p>
+        <h3 className="total-row">
+          Total: <span>₱{total.toFixed(2)}</span>
+        </h3>
       </div>
-      {cartItems.length > 0 && (
-        <button 
-          onClick={() => onProceedToPayment(total)} 
-          className="proceed-to-payment-btn"
-        >
-          Proceed to Payment
-        </button>
-      )}
+      <button onClick={() => onProceedToPayment(total)} className="proceed-to-payment-btn">
+        Proceed to Payment
+      </button>
     </div>
   );
 }

@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import Cart from '../components/Cart';
 import ProductOptionsModal from '../components/ProductOptionsModal';
 import PaymentModal from '../components/PaymentModal';
 import ReceiptModal from '../components/ReceiptModal';
-import OrderHistoryModal from '../components/OrderHistoryModal'; // Import OrderHistoryModal
 import productsData from '../data/products.json';
 import './POS.css';
 
-function POS() {
+function POS({ user }) {
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [isOptionsModalOpen, setIsOptionsModalOpen] = useState(false);
   const [selectedProductForOptions, setSelectedProductForOptions] = useState(null);
-  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false); // State for PaymentModal
-  const [currentOrderAmount, setCurrentOrderAmount] = useState(0); // State for total amount at payment
-  const [orderHistory, setOrderHistory] = useState([]); // State for order history
-  const [isReceiptModalOpen, setIsReceiptModalOpen] = useState(false); // State for ReceiptModal
-  const [currentReceipt, setCurrentReceipt] = useState(null); // State for the order to show in receipt
-  const [isHistoryModalOpen, setIsHistoryModalOpen] = useState(false); // State for OrderHistoryModal
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+  const [currentOrderAmount, setCurrentOrderAmount] = useState(0);
+  const [isReceiptModalOpen, setIsReceiptModalOpen] = useState(false);
+  const [currentReceipt, setCurrentReceipt] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setProducts(productsData);
@@ -26,20 +25,11 @@ function POS() {
     if (savedCart) {
       setCartItems(JSON.parse(savedCart));
     }
-    const savedOrderHistory = localStorage.getItem('orderHistory');
-    if (savedOrderHistory) {
-      setOrderHistory(JSON.parse(savedOrderHistory));
-    }
   }, []);
 
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
-
-  useEffect(() => {
-    localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
-  }, [orderHistory]);
-
 
   const handleOpenOptionsModal = (product) => {
     setSelectedProductForOptions(product);
@@ -52,40 +42,36 @@ function POS() {
   };
 
   const handleAddToCartWithOptions = (productWithOptions) => {
-    setCartItems(prevItems => {
-      // Use cartItemId to check if the exact same configured item exists
-      const itemExists = prevItems.find(item => item.cartItemId === productWithOptions.cartItemId);
+    setCartItems((prevItems) => {
+      const itemExists = prevItems.find((item) => item.cartItemId === productWithOptions.cartItemId);
       if (itemExists) {
-        return prevItems.map(item =>
+        return prevItems.map((item) =>
           item.cartItemId === productWithOptions.cartItemId
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       }
-      // Add new item with quantity 1, using finalPrice from modal
       return [...prevItems, { ...productWithOptions, price: productWithOptions.finalPrice, quantity: 1 }];
     });
-    handleCloseOptionsModal(); // Close modal after adding
+    handleCloseOptionsModal();
   };
-  
+
   const handleProductSelect = (product) => {
     if ((product.options && product.options.length > 0) || (product.addons && product.addons.length > 0)) {
       handleOpenOptionsModal(product);
     } else {
-      // Add directly to cart if no options/addons
-      // We need a cartItemId even for direct adds for consistency
       const cartItem = {
         ...product,
         finalPrice: product.price,
         selectedOptions: {},
         selectedAddons: [],
-        cartItemId: `${product.id}-default`, // Simple cartItemId for non-customized items
-        quantity: 1
+        cartItemId: `${product.id}-default`,
+        quantity: 1,
       };
-      setCartItems(prevItems => {
-        const itemExists = prevItems.find(item => item.cartItemId === cartItem.cartItemId);
+      setCartItems((prevItems) => {
+        const itemExists = prevItems.find((item) => item.cartItemId === cartItem.cartItemId);
         if (itemExists) {
-          return prevItems.map(item =>
+          return prevItems.map((item) =>
             item.cartItemId === cartItem.cartItemId ? { ...item, quantity: item.quantity + 1 } : item
           );
         }
@@ -94,17 +80,16 @@ function POS() {
     }
   };
 
-
-  const handleRemoveFromCart = (cartItemId) => { // Changed from productId to cartItemId
-    setCartItems(prevItems => prevItems.filter(item => item.cartItemId !== cartItemId));
+  const handleRemoveFromCart = (cartItemId) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.cartItemId !== cartItemId));
   };
 
-  const handleUpdateQuantity = (cartItemId, newQuantity) => { // Changed from productId to cartItemId
+  const handleUpdateQuantity = (cartItemId, newQuantity) => {
     if (newQuantity <= 0) {
       handleRemoveFromCart(cartItemId);
     } else {
-      setCartItems(prevItems =>
-        prevItems.map(item =>
+      setCartItems((prevItems) =>
+        prevItems.map((item) =>
           item.cartItemId === cartItemId ? { ...item, quantity: newQuantity } : item
         )
       );
@@ -121,23 +106,18 @@ function POS() {
   };
 
   const handleProcessPayment = (paymentMethod, amountPaid) => {
-    // Simulate payment processing
     console.log(`Payment processed via ${paymentMethod} for ₱${amountPaid.toFixed(2)}`);
-    
     const newOrder = {
-      id: `order-${Date.now()}`, // Simple unique ID
-      items: [...cartItems], // Copy current cart items
+      id: `order-${Date.now()}`,
+      items: [...cartItems],
       totalAmount: amountPaid,
       paymentMethod: paymentMethod,
       date: new Date().toISOString(),
     };
-
-    setOrderHistory(prevHistory => [...prevHistory, newOrder]);
-    setCartItems([]); // Clear the cart
+    setCartItems([]);
     setIsPaymentModalOpen(false);
-    
-    setCurrentReceipt(newOrder); // Set the current order for the receipt
-    setIsReceiptModalOpen(true); // Open the receipt modal
+    setCurrentReceipt(newOrder);
+    setIsReceiptModalOpen(true);
   };
 
   const handleCloseReceiptModal = () => {
@@ -145,33 +125,19 @@ function POS() {
     setCurrentReceipt(null);
   };
 
-  const handleOpenHistoryModal = () => {
-    setIsHistoryModalOpen(true);
-  };
-
-  const handleCloseHistoryModal = () => {
-    setIsHistoryModalOpen(false);
-  };
-
   return (
     <div className="pos-system">
       <div className="main-controls">
-        <button onClick={handleOpenHistoryModal} className="history-btn">
-          View Order History
-        </button>
+        <h3>Welcome, {user.username}!</h3>
       </div>
-      <div className="main-content-area"> {/* New wrapper */}
+      <div className="main-content-area">
         <div className="product-list">
-          {products.map(category => (
+          {products.map((category) => (
             <div key={category.category} className="category-section">
               <h2>{category.category}</h2>
               <div className="items-grid">
-                {category.items.map(item => (
-                  <ProductCard
-                    key={item.id}
-                    product={item}
-                    onProductSelect={handleProductSelect}
-                  />
+                {category.items.map((item) => (
+                  <ProductCard key={item.id} product={item} onProductSelect={handleProductSelect} />
                 ))}
               </div>
             </div>
@@ -183,9 +149,7 @@ function POS() {
           onUpdateQuantity={handleUpdateQuantity}
           onProceedToPayment={handleProceedToPayment}
         />
-      </div> {/* End of main-content-area */}
-      
-      {/* Modals remain outside the main content flow */}
+      </div>
       {selectedProductForOptions && (
         <ProductOptionsModal
           product={selectedProductForOptions}
@@ -194,7 +158,7 @@ function POS() {
           onAddToCartWithOptions={handleAddToCartWithOptions}
         />
       )}
-      {isPaymentModalOpen && ( // Render PaymentModal
+      {isPaymentModalOpen && (
         <PaymentModal
           isOpen={isPaymentModalOpen}
           onClose={handleClosePaymentModal}
@@ -202,19 +166,8 @@ function POS() {
           totalAmount={currentOrderAmount}
         />
       )}
-      {currentReceipt && ( // Render ReceiptModal
-        <ReceiptModal
-          isOpen={isReceiptModalOpen}
-          onClose={handleCloseReceiptModal}
-          order={currentReceipt}
-        />
-      )}
-      {isHistoryModalOpen && ( // Render OrderHistoryModal
-        <OrderHistoryModal
-          isOpen={isHistoryModalOpen}
-          onClose={handleCloseHistoryModal}
-          orderHistory={orderHistory}
-        />
+      {currentReceipt && (
+        <ReceiptModal isOpen={isReceiptModalOpen} onClose={handleCloseReceiptModal} order={currentReceipt} />
       )}
     </div>
   );

@@ -6,6 +6,7 @@
         "id": "hc001",
         "name": "Espresso",
         "price": 140,
+        "stock": 50,
         "options": [
           {
             "name": "Size",
@@ -20,6 +21,7 @@
         "id": "hc002",
         "name": "Latte",
         "price": 196,
+        "stock": 50,
         "options": [
           {
             "name": "Size",
@@ -49,6 +51,7 @@
         "id": "hc003",
         "name": "Cappuccino",
         "price": 182,
+        "stock": 50,
         "options": [
           {
             "name": "Size",
@@ -75,6 +78,7 @@
         "id": "hc004",
         "name": "Americano",
         "price": 154,
+        "stock": 50,
         "options": [
           {
             "name": "Size",
@@ -95,6 +99,7 @@
         "id": "cc001",
         "name": "Iced Latte",
         "price": 224,
+        "stock": 50,
         "options": [
           {
             "name": "Size",
@@ -122,6 +127,7 @@
         "id": "cc002",
         "name": "Cold Brew",
         "price": 210,
+        "stock": 50,
         "options": [
           {
             "name": "Size",
@@ -145,6 +151,7 @@
         "id": "t001",
         "name": "Green Tea",
         "price": 140,
+        "stock": 50,
         "options": [
           {
             "name": "Type",
@@ -170,6 +177,7 @@
         "id": "t002",
         "name": "Chai Latte",
         "price": 213,
+        "stock": 50,
         "options": [
           {
             "name": "Type",
@@ -204,12 +212,14 @@
       {
         "id": "p001",
         "name": "Croissant",
-        "price": 112
+        "price": 112,
+        "stock": 50
       },
       {
         "id": "p002",
         "name": "Muffin",
         "price": 126,
+        "stock": 50,
         "options": [
           {
             "name": "Flavor",
@@ -225,6 +235,7 @@
         "id": "p003",
         "name": "Scone",
         "price": 154,
+        "stock": 50,
         "options": [
           {
             "name": "Type",
@@ -239,6 +250,7 @@
         "id": "p004",
         "name": "Cookie",
         "price": 84,
+        "stock": 50,
         "options": [
           {
             "name": "Flavor",
@@ -253,7 +265,8 @@
       {
         "id": "p005",
         "name": "Ensaymada",
-        "price": 168
+        "price": 168,
+        "stock": 50
       }
     ]
   }

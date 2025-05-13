@@ -128,6 +128,65 @@
   background-color: #ffcccc;
 }
 
+.discount-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.discount-label {
+  font-weight: bold;
+}
+
+/* Discount Section */
+.discount-section {
+  margin: 15px 0;
+}
+
+.discount-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.discount-input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.discount-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.discount-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.discount-select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: #f9f9f9;
+}
+
+.discount-select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.discount-inputs {
+  display: flex;
+  gap: 5px;
+}
+
 .cart-section h3 {
   margin-top: 20px;
   text-align: right;
@@ -177,6 +236,7 @@
   padding: 10px 20px; /* Adjust padding as needed */
   text-align: right; /* Or 'left', or 'center' depending on where you want it */
   border-bottom: 1px solid #eee; /* Optional: to separate from product list */
+  flex-direction: row;
 }
 
 .history-btn {
