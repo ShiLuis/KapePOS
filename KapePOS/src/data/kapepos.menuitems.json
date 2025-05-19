@@ -1,0 +1,625 @@
+[{
+  "_id": {
+    "$oid": "682b980bda3d105096f47f91"
+  },
+  "name": "Espresso",
+  "price": 140,
+  "category": "coffee",
+  "image": "",
+  "description": "Rich and full-bodied espresso shot.",
+  "available": true,
+  "productDetails": {
+    "originalId": "hc001",
+    "stock": 50,
+    "options": [
+      {
+        "name": "Size",
+        "values": [
+          {
+            "name": "Single",
+            "price_modifier": 0
+          },
+          {
+            "name": "Double",
+            "price_modifier": 28
+          }
+        ]
+      }
+    ],
+    "addons": []
+  },
+  "createdAt": {
+    "$date": "2025-05-19T20:43:55.556Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T21:01:57.038Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b980bda3d105096f47f92"
+  },
+  "name": "Latte",
+  "price": 196,
+  "category": "coffee",
+  "image": "",
+  "description": "Smooth espresso with steamed milk.",
+  "available": true,
+  "productDetails": {
+    "originalId": "hc002",
+    "stock": 50,
+    "options": [
+      {
+        "name": "Size",
+        "values": [
+          {
+            "name": "Small",
+            "price_modifier": 0
+          },
+          {
+            "name": "Medium",
+            "price_modifier": 42
+          },
+          {
+            "name": "Large",
+            "price_modifier": 70
+          }
+        ]
+      },
+      {
+        "name": "Milk",
+        "values": [
+          {
+            "name": "Whole Milk",
+            "price_modifier": 0
+          },
+          {
+            "name": "Oat Milk",
+            "price_modifier": 28
+          },
+          {
+            "name": "Almond Milk",
+            "price_modifier": 28
+          },
+          {
+            "name": "Soy Milk",
+            "price_modifier": 28
+          }
+        ]
+      }
+    ],
+    "addons": [
+      {
+        "name": "Extra Shot",
+        "price": 42
+      },
+      {
+        "name": "Vanilla Syrup",
+        "price": 28
+      },
+      {
+        "name": "Caramel Syrup",
+        "price": 28
+      }
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-05-19T20:43:55.556Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T20:43:55.556Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b980bda3d105096f47f93"
+  },
+  "name": "Cappuccino",
+  "price": 182,
+  "category": "coffee",
+  "image": "",
+  "description": "Equal parts espresso, steamed milk, and milk foam.",
+  "available": true,
+  "productDetails": {
+    "originalId": "hc003",
+    "stock": 50,
+    "options": [
+      {
+        "name": "Size",
+        "values": [
+          {
+            "name": "Small",
+            "price_modifier": 0
+          },
+          {
+            "name": "Medium",
+            "price_modifier": 42
+          },
+          {
+            "name": "Large",
+            "price_modifier": 70
+          }
+        ]
+      },
+      {
+        "name": "Milk",
+        "values": [
+          {
+            "name": "Whole Milk",
+            "price_modifier": 0
+          },
+          {
+            "name": "Oat Milk",
+            "price_modifier": 28
+          },
+          {
+            "name": "Almond Milk",
+            "price_modifier": 28
+          }
+        ]
+      }
+    ],
+    "addons": [
+      {
+        "name": "Chocolate Powder",
+        "price": 14
+      }
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-05-19T20:43:55.557Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T20:43:55.557Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b980bda3d105096f47f94"
+  },
+  "name": "Americano",
+  "price": 154,
+  "category": "coffee",
+  "image": "",
+  "description": "Espresso diluted with hot water.",
+  "available": true,
+  "productDetails": {
+    "originalId": "hc004",
+    "stock": 50,
+    "options": [
+      {
+        "name": "Size",
+        "values": [
+          {
+            "name": "Small",
+            "price_modifier": 0
+          },
+          {
+            "name": "Medium",
+            "price_modifier": 28
+          },
+          {
+            "name": "Large",
+            "price_modifier": 56
+          }
+        ]
+      }
+    ],
+    "addons": []
+  },
+  "createdAt": {
+    "$date": "2025-05-19T20:43:55.557Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T20:43:55.557Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b980bda3d105096f47f95"
+  },
+  "name": "Iced Latte",
+  "price": 224,
+  "category": "coffee",
+  "image": "",
+  "description": "Chilled espresso with cold milk over ice.",
+  "available": true,
+  "productDetails": {
+    "originalId": "cc001",
+    "stock": 50,
+    "options": [
+      {
+        "name": "Size",
+        "values": [
+          {
+            "name": "Medium",
+            "price_modifier": 0
+          },
+          {
+            "name": "Large",
+            "price_modifier": 42
+          }
+        ]
+      },
+      {
+        "name": "Milk",
+        "values": [
+          {
+            "name": "Whole Milk",
+            "price_modifier": 0
+          },
+          {
+            "name": "Oat Milk",
+            "price_modifier": 28
+          },
+          {
+            "name": "Almond Milk",
+            "price_modifier": 28
+          }
+        ]
+      }
+    ],
+    "addons": [
+      {
+        "name": "Extra Shot",
+        "price": 42
+      },
+      {
+        "name": "Vanilla Syrup",
+        "price": 28
+      },
+      {
+        "name": "Caramel Drizzle",
+        "price": 34
+      }
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-05-19T20:43:55.557Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T20:43:55.557Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b980bda3d105096f47f96"
+  },
+  "name": "Cold Brew",
+  "price": 210,
+  "category": "coffee",
+  "image": "",
+  "description": "Coffee brewed with cold water for a smooth taste.",
+  "available": true,
+  "productDetails": {
+    "originalId": "cc002",
+    "stock": 50,
+    "options": [
+      {
+        "name": "Size",
+        "values": [
+          {
+            "name": "Medium",
+            "price_modifier": 0
+          },
+          {
+            "name": "Large",
+            "price_modifier": 42
+          }
+        ]
+      }
+    ],
+    "addons": [
+      {
+        "name": "Sweet Cream",
+        "price": 42
+      },
+      {
+        "name": "Mocha Syrup",
+        "price": 28
+      }
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-05-19T20:43:55.558Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T20:43:55.558Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b980bda3d105096f47f97"
+  },
+  "name": "Green Tea",
+  "price": 140,
+  "category": "tea",
+  "image": "",
+  "description": "Delicate green tea leaves steeped to perfection.",
+  "available": true,
+  "productDetails": {
+    "originalId": "t001",
+    "stock": 50,
+    "options": [
+      {
+        "name": "Type",
+        "values": [
+          {
+            "name": "Hot"
+          },
+          {
+            "name": "Iced"
+          }
+        ]
+      },
+      {
+        "name": "Size",
+        "values": [
+          {
+            "name": "Regular",
+            "price_modifier": 0
+          },
+          {
+            "name": "Large",
+            "price_modifier": 28
+          }
+        ]
+      }
+    ],
+    "addons": [
+      {
+        "name": "Honey",
+        "price": 14
+      },
+      {
+        "name": "Lemon",
+        "price": 14
+      }
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-05-19T20:43:55.558Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T20:43:55.558Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b980bda3d105096f47f98"
+  },
+  "name": "Chai Latte",
+  "price": 213,
+  "category": "tea",
+  "image": "",
+  "description": "Spiced black tea with steamed milk.",
+  "available": true,
+  "productDetails": {
+    "originalId": "t002",
+    "stock": 50,
+    "options": [
+      {
+        "name": "Type",
+        "values": [
+          {
+            "name": "Hot"
+          },
+          {
+            "name": "Iced",
+            "price_modifier": 11
+          }
+        ]
+      },
+      {
+        "name": "Size",
+        "values": [
+          {
+            "name": "Small",
+            "price_modifier": 0
+          },
+          {
+            "name": "Medium",
+            "price_modifier": 34
+          },
+          {
+            "name": "Large",
+            "price_modifier": 62
+          }
+        ]
+      },
+      {
+        "name": "Milk",
+        "values": [
+          {
+            "name": "Whole Milk",
+            "price_modifier": 0
+          },
+          {
+            "name": "Oat Milk",
+            "price_modifier": 28
+          },
+          {
+            "name": "Almond Milk",
+            "price_modifier": 28
+          }
+        ]
+      }
+    ],
+    "addons": []
+  },
+  "createdAt": {
+    "$date": "2025-05-19T20:43:55.558Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T20:43:55.558Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b980bda3d105096f47f99"
+  },
+  "name": "Croissant",
+  "price": 112,
+  "category": "pastry",
+  "image": "",
+  "description": "Buttery, flaky French pastry.",
+  "available": true,
+  "productDetails": {
+    "originalId": "p001",
+    "stock": 50,
+    "options": [],
+    "addons": []
+  },
+  "createdAt": {
+    "$date": "2025-05-19T20:43:55.559Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T20:43:55.559Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b980bda3d105096f47f9a"
+  },
+  "name": "Muffin",
+  "price": 126,
+  "category": "pastry",
+  "image": "",
+  "description": "Moist, cake-like breakfast treat.",
+  "available": true,
+  "productDetails": {
+    "originalId": "p002",
+    "stock": 50,
+    "options": [
+      {
+        "name": "Flavor",
+        "values": [
+          {
+            "name": "Blueberry"
+          },
+          {
+            "name": "Chocolate Chip"
+          },
+          {
+            "name": "Banana Nut"
+          }
+        ]
+      }
+    ],
+    "addons": []
+  },
+  "createdAt": {
+    "$date": "2025-05-19T20:43:55.559Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T20:43:55.559Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b980bda3d105096f47f9b"
+  },
+  "name": "Scone",
+  "price": 154,
+  "category": "pastry",
+  "image": "",
+  "description": "Lightly sweetened baked good with a crumbly texture.",
+  "available": false,
+  "productDetails": {
+    "originalId": "p003",
+    "stock": 50,
+    "options": [
+      {
+        "name": "Type",
+        "values": [
+          {
+            "name": "Blueberry"
+          },
+          {
+            "name": "Cranberry Orange"
+          }
+        ]
+      }
+    ],
+    "addons": []
+  },
+  "createdAt": {
+    "$date": "2025-05-19T20:43:55.559Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T21:55:34.211Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b980bda3d105096f47f9c"
+  },
+  "name": "Cookie",
+  "price": 84,
+  "category": "pastry",
+  "image": "",
+  "description": "Freshly baked, soft and chewy cookie.",
+  "available": true,
+  "productDetails": {
+    "originalId": "p004",
+    "stock": 50,
+    "options": [
+      {
+        "name": "Flavor",
+        "values": [
+          {
+            "name": "Chocolate Chip"
+          },
+          {
+            "name": "Oatmeal Raisin"
+          },
+          {
+            "name": "Sugar Cookie"
+          }
+        ]
+      }
+    ],
+    "addons": []
+  },
+  "createdAt": {
+    "$date": "2025-05-19T20:43:55.559Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T20:43:55.559Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b9edfddddf8b5990075a3"
+  },
+  "name": "Ensaymada",
+  "price": 125,
+  "category": "pastry",
+  "image": "",
+  "description": "Tasty Ensaymada",
+  "available": false,
+  "productDetails": {
+    "options": [],
+    "addons": [],
+    "stock": 3
+  },
+  "createdAt": {
+    "$date": "2025-05-19T21:13:03.463Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T22:02:33.223Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,50 @@
+[{
+  "_id": {
+    "$oid": "682b9529104dba8ffd36ded0"
+  },
+  "username": "cashier",
+  "password": "$2b$10$IFKS6pWRlnelFvOZsRIvnuBVgt.zqascWVrFF/fFEtPp.exeFuuwy",
+  "role": "cashier",
+  "createdAt": {
+    "$date": "2025-05-19T20:31:37.857Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b9529104dba8ffd36decf"
+  },
+  "username": "admin",
+  "password": "$2b$10$8C.YqJKzKBD.fV/3umyGl.CesJkNJVJyz9JDFDGXdgjORW11oTyXS",
+  "role": "admin",
+  "createdAt": {
+    "$date": "2025-05-19T20:31:37.856Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682ba865f15197bf7c751884"
+  },
+  "username": "Luis",
+  "password": "$2b$10$qQ2ra5pyLFi5z3VTl8NMOuarBKH1qxQJ8eVuOsV37oGjakwZkFExm",
+  "role": "cashier",
+  "active": true,
+  "createdAt": {
+    "$date": "2025-05-19T21:53:41.093Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682bac8b7e8072d37a4de08b"
+  },
+  "username": "Christian",
+  "password": "$2b$10$tTI9o.WGj1dZikxJypXTjejJMUXQluXomoJYr39zcgruLK7HpVPj6",
+  "role": "admin",
+  "active": true,
+  "createdAt": {
+    "$date": "2025-05-19T22:11:23.507Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,129 @@
+[{
+  "_id": {
+    "$oid": "682ba20e60b4c861237a3b3f"
+  },
+  "orderNumber": "ORD-1747689998967",
+  "items": [
+    {
+      "name": "Cappuccino",
+      "price": 182,
+      "quantity": 1,
+      "selectedOptions": {
+        "Size": "Small",
+        "Milk": "Whole Milk"
+      },
+      "selectedAddons": [],
+      "itemNotes": "",
+      "_id": {
+        "$oid": "682ba20e60b4c861237a3b40"
+      }
+    }
+  ],
+  "totalAmount": 196.56,
+  "paymentMethod": "Card",
+  "date": {
+    "$date": "2025-05-19T21:26:38.941Z"
+  },
+  "createdBy": "admin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682ba33360b4c861237a3b5d"
+  },
+  "orderNumber": "ORD-1747690291971",
+  "items": [
+    {
+      "name": "Espresso",
+      "price": 140,
+      "quantity": 1,
+      "selectedOptions": {
+        "Size": "Single"
+      },
+      "selectedAddons": [],
+      "itemNotes": "",
+      "_id": {
+        "$oid": "682ba33360b4c861237a3b5e"
+      }
+    }
+  ],
+  "totalAmount": 151.2,
+  "paymentMethod": "Cash",
+  "date": {
+    "$date": "2025-05-18T21:31:31.968Z"
+  },
+  "createdBy": "admin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682ba49060b4c861237a3b9c"
+  },
+  "orderNumber": "ORD-1747690640465",
+  "items": [
+    {
+      "name": "Latte",
+      "price": 224,
+      "quantity": 1,
+      "selectedOptions": {
+        "Size": "Small",
+        "Milk": "Oat Milk"
+      },
+      "selectedAddons": [],
+      "itemNotes": "",
+      "_id": {
+        "$oid": "682ba49060b4c861237a3b9d"
+      }
+    },
+    {
+      "name": "Chai Latte",
+      "price": 213,
+      "quantity": 1,
+      "selectedOptions": {
+        "Type": "Hot",
+        "Size": "Small",
+        "Milk": "Whole Milk"
+      },
+      "selectedAddons": [],
+      "itemNotes": "",
+      "_id": {
+        "$oid": "682ba49060b4c861237a3b9e"
+      }
+    }
+  ],
+  "totalAmount": 489.44,
+  "paymentMethod": "Cash",
+  "date": {
+    "$date": "2025-05-19T21:37:20.462Z"
+  },
+  "createdBy": "admin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682ba52a60b4c861237a3ba2"
+  },
+  "orderNumber": "ORD-1747690794344",
+  "items": [
+    {
+      "name": "Espresso",
+      "price": 140,
+      "quantity": 1,
+      "selectedOptions": {
+        "Size": "Single"
+      },
+      "selectedAddons": [],
+      "itemNotes": "",
+      "_id": {
+        "$oid": "682ba52a60b4c861237a3ba3"
+      }
+    }
+  ],
+  "totalAmount": 156.8,
+  "paymentMethod": "Cash",
+  "date": {
+    "$date": "2025-05-19T21:39:54.341Z"
+  },
+  "createdBy": "admin",
+  "__v": 0
+}]
